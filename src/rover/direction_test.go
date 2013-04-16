@@ -47,6 +47,4 @@ func TestRotate(t *testing.T) {
   if d.Rotate(-361); d.Degree != -1 {
     t.Errorf("expected -1, got %v", d.Degree)
   }
-
-
 }
