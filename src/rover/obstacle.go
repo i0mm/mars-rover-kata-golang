@@ -1,5 +1,5 @@
 package rover
 
 type obstacle struct {
-  Point point
+	Point point
 }

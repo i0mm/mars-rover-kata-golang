@@ -1,5 +1,5 @@
 package rover
 
 type point struct {
-  X, Y int
+	X, Y int
 }
