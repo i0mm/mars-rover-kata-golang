@@ -8,17 +8,17 @@ type Rover struct {
   Path []position
 }
 
+func (r *Rover) Init(x, y int, degree int16) *Rover {
+  r.Path = append(r.Path, position{point{x, y}, degree})
+  return r
+}
+
 func (r *Rover) CurrentPosition() *position {
   if len(r.Path) > 0 {
     return &r.Path[len(r.Path)-1]
   }
   return nil
 }
-
-func (r *Rover) Place(x, y int, degree int16) *Rover {
-  r.Path = append(r.Path, position{point{x, y}, degree})
-  return r
-} 
 
 func (r *Rover) Command(command string) *Rover {
   commandSlice := strings.Split(command, "")
@@ -32,8 +32,6 @@ func (r *Rover) Command(command string) *Rover {
         r.Turn(-90) // turn left (rotate by 90d)
       case "r":
         r.Turn(90) // turn right (rotate by 90d)
-      default:
-        // unknown command
     }
   }
   return r
