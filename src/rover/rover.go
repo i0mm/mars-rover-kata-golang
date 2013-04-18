@@ -1,6 +1,7 @@
 package rover
 
 import (
+  "fmt"
   "strings"
 )
 
@@ -50,4 +51,22 @@ func (r *Rover) Turn(degree int16) *Rover {
   d.Rotate(degree);
   r.Path = append(r.Path, d)
   return r
+}
+
+
+// convenience toString method
+func (r Rover) String() string {
+  p := r.CurrentPosition()
+  degreeString := ""
+  switch p.Degree {
+    case 0:
+      degreeString = "NORTH"
+    case 90:
+      degreeString = "EAST"
+    case 180:
+      degreeString = "SOUTH"
+    case 270:
+      degreeString = "WEST"
+  }
+  return fmt.Sprintf("(x%v|y%v), %v° = %v", p.Point.X, p.Point.Y, p.Degree, degreeString)
 }

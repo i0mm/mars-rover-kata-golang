@@ -1,6 +1,6 @@
 package rover
 
-import (
+import ( 
   "math"
 )
 
@@ -23,6 +23,6 @@ func (p *position) MoveInDirection(ticks int) *position {
 
   // do sin(n°) and convert n° to rad before
   p.Point.Y = p.Point.Y + ticks * int(math.Sin(float64(p.Degree) * math.Pi / 180.0))
-  
+
   return p // keep it chainable
 }
