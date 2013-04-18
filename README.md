@@ -17,13 +17,23 @@ mars-rover-kata-golang
 ## Coordinates
 
 ```
-      NORTH
-         0°
+(x,y)
 
-WEST         EAST
-270°          90°
+                         (0,1)
+                        NORTH: 0°
 
-      SOUTH
-       180°
+                           | y
+                           |
+                           |
+                           | (0,0)
+(-1,0) WEST: 270°   -----------------  EAST: 90° (1,0)
+                           |        x  
+                           |
+                           |
+                           |
+
+                        SOUTH: 180°
+                         (0,-1)
+       
 
 ```
