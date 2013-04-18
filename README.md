@@ -12,3 +12,18 @@ mars-rover-kata-golang
  * Implement obstacle detection before each move to a new square. If a given sequence of commands encounters an obstacle, the rover moves up to the last possible point and reports the obstacle.
  * Example: The rover is on a 100x100 grid at location (0, 0) and facing NORTH. The rover is given the commands "ffrff" and should end up at (2, 2)
  * Tips: use multiple classes and TDD
+
+
+## Coordinates
+
+```
+      NORTH
+         0°
+
+WEST         EAST
+270°          90°
+
+      SOUTH
+       180°
+
+```
