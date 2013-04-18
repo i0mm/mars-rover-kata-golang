@@ -9,8 +9,6 @@ func TestCommandString(t *testing.T) {
 
   r.Command("ffrff")
   if(r.CurrentPosition().Point.X != 2 || r.CurrentPosition().Point.Y != 2 || r.CurrentPosition().Degree != 90) {
-    t.Errorf("expected , got %v", r.CurrentPosition())
-  }
-
-  
+    t.Errorf("expected 2,2,90, got %v", r.CurrentPosition())
+  } 
 }
