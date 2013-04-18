@@ -1,5 +1,9 @@
 package rover
 
+import (
+  "strings"
+)
+
 type Rover struct {
   Path []position
 }
@@ -16,24 +20,22 @@ func (r *Rover) Place(x, y int, degree int16) *Rover {
   return r
 } 
 
-
-func (r *Rover) OneLeftTurn() *Rover {
-  r.Turn(-90)
-  return r
-}
-
-func (r *Rover) OneRightTurn() *Rover {
-  r.Turn(90)
-  return r
-}
-
-func (r *Rover) Forward() *Rover {
-  r.Move(1)
-  return r
-}
-
-func (r *Rover) Backward() *Rover {
-  r.Move(-1)
+func (r *Rover) Command(command string) *Rover {
+  commandSlice := strings.Split(command, "")
+  for _, value := range commandSlice {
+    switch value {
+      case "f":
+        r.Move(1) // move 1 tick forward
+      case "b":
+        r.Move(-1) // move 1 tick backward
+      case "l":
+        r.Turn(-90) // turn left (rotate by 90d)
+      case "r":
+        r.Turn(90) // turn right (rotate by 90d)
+      default:
+        // unknown command
+    }
+  }
   return r
 }
 
