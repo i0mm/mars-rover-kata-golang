@@ -13,6 +13,20 @@ mars-rover-kata-golang
  * Example: The rover is on a 100x100 grid at location (0, 0) and facing NORTH. The rover is given the commands "ffrff" and should end up at (2, 2)
  * Tips: use multiple classes and TDD
 
+## Installing Go
+see http://golang.org/doc/install or
+
+```
+brew install go
+```
+
+## Usage
+```
+git clone https://github.com/mattes/mars-rover-kata-golang.git
+cd mars-rover-kata-golang
+export GOPATH=/absolute/path/to/mars-rover-kata-golang # replace with your absolute path
+go test rover # run tests
+```
 
 ## Coordinates
 
